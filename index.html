@@ -78,7 +78,6 @@
       cursor: pointer;
     }
 
-    /* Updated Tooltip Styling */
     .tooltip {
       visibility: hidden;
       background-color: rgba(0, 255, 204, 0.9);
@@ -87,14 +86,14 @@
       border-radius: 6px;
       padding: 0.5rem;
       position: absolute;
-      top: 100%; /* Changed to appear below */
+      top: 100%;
       left: 50%;
       margin-left: -60px;
       opacity: 0;
       transition: opacity 0.3s;
       width: 120px;
       z-index: 1;
-      margin-top: 5px; /* Small gap between item and tooltip */
+      margin-top: 5px;
     }
 
     ul li:hover .tooltip {
@@ -110,7 +109,6 @@
       color: #888;
     }
 
-    /* Popup Styling */
     .popup {
       position: fixed;
       top: 50%;
@@ -241,8 +239,9 @@
     <div class="popup-close" onclick="fecharPopup()">×</div>
     <h3>Quer um site assim pro seu negócio?</h3>
     <p>Digite seu e-mail e receba uma proposta grátis:</p>
-    <form action="https://formsubmit.co/el/voreju" method="POST">
+    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
       <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+      <input type="hidden" name="_next" value="https://seusite.com/thank-you.html">
       <button type="submit">Receber Proposta</button>
     </form>
   </div>
