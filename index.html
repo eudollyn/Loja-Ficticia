@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Fictícia - Seu Negócio Online em 48h</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #00ffcc;
+    }
+
+    header p {
+      margin: 0.5rem 0 1rem;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #00ffcc;
+      color: #121212;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00ccaa;
+    }
+
+    .highlight {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 255, 204, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
+    }
+
+    section {
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #333;
+    }
+
+    h2 {
+      color: #00ffcc;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background-color: #1f1f1f;
+      margin-bottom: 0.5rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Updated Tooltip Styling */
+    .tooltip {
+      visibility: hidden;
+      background-color: rgba(0, 255, 204, 0.9);
+      color: #121212;
+      text-align: center;
+      border-radius: 6px;
+      padding: 0.5rem;
+      position: absolute;
+      top: 100%; /* Changed to appear below */
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      width: 120px;
+      z-index: 1;
+      margin-top: 5px; /* Small gap between item and tooltip */
+    }
+
+    ul li:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1f1f1f;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Popup Styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 255, 204, 0.2);
+      display: none;
+      z-index: 999;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      border: 1px solid rgba(0, 255, 204, 0.3);
+    }
+
+    .popup h3 {
+      color: #00ffcc;
+      margin: 0 0 1.5rem;
+      font-size: 1.6rem;
+      line-height: 1.3;
+    }
+
+    .popup p {
+      color: #ccc;
+      margin: 0 0 1.5rem;
+      font-size: 1rem;
+    }
+
+    .popup input {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #00ffcc;
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+      width: 100%;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+
+    .popup input:focus {
+      outline: none;
+      border-color: #00ccaa;
+    }
+
+    .popup button {
+      background-color: #00ffcc;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      color: #121212;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.1s;
+    }
+
+    .popup button:hover {
+      background-color: #00ccaa;
+      transform: scale(1.05);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      color: #00ffcc;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .popup-close:hover {
+      color: #00ccaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Loja Fictícia</h1>
+    <p>Seu negócio online em 48h com atendimento automatizado por IA</p>
+    <a href="https://wa.me/5511999999999" target="_blank" class="btn highlight">Fale no WhatsApp</a>
+  </header>
+
+  <section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>Somos especialistas em transformar negócios locais em potências digitais. Criamos sites rápidos, bonitos e com atendimento automático 24h.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <ul>
+      <li>
+        Criação de sites responsivos
+        <span class="tooltip">Criamos sites rápidos e adaptáveis para qualquer dispositivo.</span>
+      </li>
+      <li>
+        Integração com WhatsApp e IA
+        <span class="tooltip">Integração direta com WhatsApp e IA para atendimento 24h.</span>
+      </li>
+      <li>
+        Presença no Google e redes sociais
+        <span class="tooltip">Otimizamos seu site para aparecer nas buscas do Google e redes sociais.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="depoimentos">
+    <h2>Depoimentos</h2>
+    <blockquote>\"Em dois dias eu já tava recebendo pedido pelo WhatsApp. Top demais!\" – Cliente Fictício</blockquote>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Nosso atendimento com IA está ativo 24h. Clique e fale direto no WhatsApp:</p>
+    <a href="https://wa.me/5511999999999" target="_blank" class="btn highlight">Atendimento Instantâneo</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Loja Fictícia. Todos os direitos reservados.</p>
+  </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup-close" onclick="fecharPopup()">×</div>
+    <h3>Quer um site assim pro seu negócio?</h3>
+    <p>Digite seu e-mail e receba uma proposta grátis:</p>
+    <form action="https://formsubmit.co/ehenriquesilva021@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+      <button type="submit">Receber Proposta</button>
+    </form>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "block";
+    }, 7000);
+
+    function fecharPopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
